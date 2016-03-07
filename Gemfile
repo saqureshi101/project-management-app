@@ -41,20 +41,20 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
   gem 'devise'
-  gem 'auto_html', '~> 1.6'
-  gem 'simple_form'
-   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-  gem 'font-awesome-rails'
-   gem 'web-console', '~> 2.0'
+
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+ 
  
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
- 
- 
+  gem 'spring'
+ gem 'auto_html', '~> 1.6'
+  gem 'simple_form'
+   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+  gem 'font-awesome-rails'
+   gem 'web-console', '~> 2.0'
   
   
 end
