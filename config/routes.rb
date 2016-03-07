@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :projects
+    resources :projects do
+    member do   
+      put :change 
+    end
+  end
   devise_for :users
  get 'pages/home'
 
