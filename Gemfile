@@ -52,6 +52,8 @@ group :development do
   gem 'spring'
  gem 'auto_html', '~> 1.6'
   gem 'simple_form'
+  gem 'sqlite3'
+  gem 'devise'
    gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'font-awesome-rails'
    gem 'web-console', '~> 2.0'
