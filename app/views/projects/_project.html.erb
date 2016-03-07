@@ -1,0 +1,21 @@
+<div class="panel panel-info">	
+	<div class="panel-heading">
+	<%= link_to edit_project_path(project) do %>
+		Created <%= time_ago_in_words(project.created_at) %> ago 
+	<% end %>
+	</div>
+	<div class="panel-body"><%= project.content %></div>
+	<div class="panel-footer text-center">
+		<div class="btn-group btn-group-justified">
+		<% if project.stage == 'doing' %> 
+		  <%= link_to "<i class ='fa fa-arrow-left'></i>".html_safe, change_project_path(project, stage: "to_do"), method: :put, class: "btn btn-info btn-md btn-block"  %>
+		  <%= link_to "<i class ='fa fa-arrow-right'></i>".html_safe, change_project_path(project, stage: "done"), method: :put, class: "btn btn-info btn-md btn-block"  %>
+		<% elsif project.stage == 'done' %>
+		  <%= link_to "<i class ='fa fa-arrow-left'></i>".html_safe, change_project_path(project, stage: "doing"), method: :put, class: "btn btn-info btn-md btn-block"  %>
+		<% else %>
+		  <%= link_to "<i class ='fa fa-arrow-right'></i>".html_safe, change_project_path(project, stage: "doing"), method: :put, class: "btn btn-info btn-md btn-block"  %>
+		<% end %>   
+		</div>
+	</div>
+</div>
+

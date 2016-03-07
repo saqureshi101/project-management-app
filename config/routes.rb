@@ -8,7 +8,7 @@ Rails.application.routes.draw do
  get 'pages/home'
 
   
-
+get 'test' => 'pages#test'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
