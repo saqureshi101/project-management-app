@@ -3,6 +3,17 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
   # GET /Projects
   # GET /Projects.json
+ 
+  def home
+    if current_user
+      redirect_to projects_path
+    end
+  end
+
+def body_html
+auto_html(self[:body_html]) { simple_format; link(:target => 'blank') }
+end
+
   def index
     @to_do = current_user.projects.where(stage: "to_do")
     @doing = current_user.projects.where(stage: "doing")
@@ -16,7 +27,7 @@ class ProjectsController < ApplicationController
 
   # GET /Projects/new
   def new
-    @project = project.new
+    @project = Project.new
   end
 
   # GET /Projects/1/edit

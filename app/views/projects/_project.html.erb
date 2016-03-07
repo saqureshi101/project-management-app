@@ -1,10 +1,14 @@
+
 <div class="panel panel-info">	
 	<div class="panel-heading">
 	<%= link_to edit_project_path(project) do %>
 		Created <%= time_ago_in_words(project.created_at) %> ago 
 	<% end %>
+	<%= link_to 'X', project_path(project), method: :delete, data: {confirm: "Are you sure?"}, class: 'pull-right' %>
 	</div>
 	<div class="panel-body"><%= project.content %></div>
+	<div class="panel-body"><%= raw(project.content_html) %></div>
+	<div class="panel-body"><%= project.content_html %></div>
 	<div class="panel-footer text-center">
 		<div class="btn-group btn-group-justified">
 		<% if project.stage == 'doing' %> 
@@ -18,4 +22,3 @@
 		</div>
 	</div>
 </div>
-
