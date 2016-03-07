@@ -5,8 +5,9 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    
-    @projects = current_user.projects
+    @to_do = current_user.projects.where(stage: "to_do")
+    @doing = current_user.projects.where(stage: "doing")
+    @done = current_user.projects.where(stage: "done")
   end
 
   # GET /projects/1
@@ -71,6 +72,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:content)
+      params.require(:project).permit(:content, :stage)
     end
 end
